@@ -1,0 +1,18 @@
+{% load l10n %}
+{% if vehicle.status == 'MAINTENANCE' or vehicle.status == 'DAMAGED' or vehicle.status == 'UNAVAILABLE' %}
+<p class="text-muted">Temporarily unavailable for booking. You can keep this car saved for later.</p>
+{% else %}
+<form method="post" action="{% url 'bookings:create' vehicle.pk %}" class="cart-checkout" data-rate="{{ vehicle.price_per_day|unlocalize }}" data-deposit="{{ vehicle.security_deposit|unlocalize }}">
+  {% csrf_token %}
+  <div class="mb-3"><label class="form-label" for="pickup-{{ vehicle.pk }}">Pickup date</label><input class="form-control" id="pickup-{{ vehicle.pk }}" name="pickup_date" type="date" min="{{ today }}" required></div>
+  <div class="mb-3"><label class="form-label" for="return-{{ vehicle.pk }}">Return date</label><input class="form-control" id="return-{{ vehicle.pk }}" name="return_date" type="date" min="{{ today }}" required></div>
+  <div class="bg-light rounded p-3 mb-3" aria-live="polite">
+    <p class="mb-1">Rental days: <strong data-days>Choose dates</strong></p>
+    <p class="mb-1">Rental estimate: <strong data-rental>—</strong></p>
+    <p class="mb-1">Security deposit: <strong>₦{{ vehicle.security_deposit|floatformat:2 }}</strong></p>
+    <p class="mb-0">Estimated total: <strong data-total>—</strong></p>
+  </div>
+  <p class="small text-muted">The return day is not charged. Availability and the final total are checked at checkout. This creates a pending booking and opens WhatsApp to arrange payment.</p>
+  <button type="submit" class="btn btn-success w-100">Continue to payment</button>
+</form>
+{% endif %}

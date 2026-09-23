@@ -1,0 +1,13 @@
+.vehicle-art { position: relative; display: flex; align-items: center; justify-content: center; height: 220px; overflow: hidden; background: radial-gradient(ellipse at 50% 65%, #314764, #111f33 75%); color: #96b5df; }
+.vehicle-art svg { width: 95%; height: 100%; padding-top: 1.2rem; }
+.vehicle-art-brand { position: absolute; top: 1rem; left: 1.15rem; font-size: .7rem; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; color: #dce8fa; }
+.vehicle-art-note { position: absolute; bottom: .6rem; right: .8rem; color: #b7c6dd; font-size: .62rem; }
+.vehicle-art[data-brand="Ferrari"] { color: #e65053; }
+.vehicle-art[data-brand="Rolls-Royce"], .vehicle-art[data-brand="Bentley"] { color: #d9c69d; }
+.vehicle-art[data-brand="Mercedes-Benz"] { color: #c6d0dd; }
+.vehicle-art[data-brand="Lamborghini"] { color: #c7dd56; }
+.vehicle-art[data-brand="Porsche"] { color: #e4b265; }
+.vehicle-art[data-brand="BMW"] { color: #68a5ed; }
+.vehicle-art[data-brand="Lexus"] { color: #b6a4d8; }
+.vehicle-detail-art .vehicle-art { height: clamp(260px, 36vw, 460px); border-radius: 1.25rem; }
+.vehicle-card img.ai-car-image { object-fit: contain; background: #e6e6e6; }

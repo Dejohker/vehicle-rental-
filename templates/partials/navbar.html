@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{% if user.is_staff %}{% url 'dashboard:staff' %}{% elif user.is_authenticated %}{% url 'dashboard:customer' %}{% else %}{% url 'core:home' %}{% endif %}">RideFlow</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav me-auto">
+        {% if user.is_staff %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'dashboard:staff' %}">Staff dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'vehicles:manage' %}">Fleet</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'bookings:manage' %}">Bookings</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'dashboard:customers' %}">Customers</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'payments:list' %}">Payments</a></li>
+        {% elif user.is_authenticated %}
+        <li class="nav-item"><a class="nav-link{% if request.resolver_match.view_name == 'vehicles:showcase' %} active{% endif %}" href="{% url 'vehicles:showcase' %}">Showcase</a></li>
+        <li class="nav-item"><a class="nav-link{% if request.resolver_match.view_name == 'dashboard:customer' %} active{% endif %}" href="{% url 'dashboard:customer' %}">My rentals</a></li>
+        <li class="nav-item"><a class="nav-link{% if request.resolver_match.view_name == 'vehicles:list' %} active{% endif %}" href="{% url 'vehicles:list' %}">Browse cars</a></li>
+        <li class="nav-item"><a class="nav-link{% if request.resolver_match.view_name == 'vehicles:saved' %} active{% endif %}" href="{% url 'vehicles:saved' %}">Saved cars</a></li>
+        <li class="nav-item"><a class="nav-link{% if request.resolver_match.namespace == 'bookings' %} active{% endif %}" href="{% url 'bookings:list' %}">My bookings</a></li>
+        {% else %}
+        <li class="nav-item"><a class="nav-link{% if request.resolver_match.view_name == 'vehicles:showcase' %} active{% endif %}" href="{% url 'vehicles:showcase' %}">Showcase</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'core:home' %}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'vehicles:list' %}">Browse cars</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'core:about' %}">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'core:contact' %}">Contact</a></li>
+        {% endif %}
+      </ul>
+      <ul class="navbar-nav align-items-lg-center">
+        {% if user.is_authenticated %}
+        {% if not user.is_staff %}
+        <li class="nav-item me-lg-2 my-2 my-lg-0">
+          <a class="btn {% if request.resolver_match.view_name == 'dashboard:cart' %}btn-primary{% else %}btn-outline-light{% endif %} d-inline-flex align-items-center gap-2" href="{% url 'dashboard:cart' %}" aria-label="Cart, {{ cart_item_count }} item{{ cart_item_count|pluralize }}">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h3l3 13h11l3-9H6"/><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/></svg>
+            Cart <span class="badge rounded-pill bg-light text-dark">{{ cart_item_count }}</span>
+          </a>
+        </li>
+        {% endif %}
+        {% if not user.is_staff %}<li class="nav-item"><a class="nav-link" href="{% url 'accounts:profile' %}">My profile</a></li>{% endif %}
+        <li class="nav-item"><form method="post" action="{% url 'accounts:logout' %}">{% csrf_token %}<button class="btn nav-link" type="submit">Sign out</button></form></li>
+        {% else %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">Sign in</a></li>
+        <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="{% url 'accounts:register' %}">Create account</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

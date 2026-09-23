@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}{{ vehicle }} | RideFlow{% endblock %}
+{% block content %}
+<div class="container page-section">
+  <a href="{% url 'vehicles:list' %}" class="d-inline-block mb-4">← Browse all cars</a>
+  <div class="row g-5">
+    <div class="col-lg-7 vehicle-detail-art">{% if vehicle.image %}<img src="{{ vehicle.image.url }}" class="img-fluid rounded-4" alt="{{ vehicle }}">{% else %}{% include 'partials/vehicle_art.html' %}{% endif %}</div>
+    <div class="col-lg-5">
+      <div class="d-flex justify-content-between align-items-center gap-2"><span class="badge bg-primary">{{ vehicle.category }}</span>{% include 'partials/save_vehicle.html' %}</div>
+      <h1 class="mt-3">{{ vehicle }}</h1>
+      {% if vehicle.has_ai_image %}<p class="small text-muted">AI-generated illustration. Model details may vary; this is not a photograph of the actual rental car.</p>{% endif %}
+      {% if vehicle.is_demo_listing %}<p class="badge bg-warning text-dark">Demo listing · illustrative pricing and configuration</p>{% endif %}
+      <p class="text-muted">{{ vehicle.description }}</p>
+      <div class="spec-grid"><span>Transmission<strong>{{ vehicle.get_transmission_display }}</strong></span><span>Fuel<strong>{{ vehicle.get_fuel_type_display }}</strong></span><span>Seats<strong>{{ vehicle.number_of_seats }}</strong></span><span>Status<strong>{{ vehicle.get_status_display }}</strong></span></div>
+      <hr>
+      <p>Security deposit: <strong>₦{{ vehicle.security_deposit|floatformat:0 }}</strong></p>
+      <h2 class="text-primary">₦{{ vehicle.price_per_day|floatformat:0 }} <small class="text-muted fs-6">per day</small></h2>
+      {% include 'partials/add_to_cart.html' %}
+      {% if vehicle.status == 'MAINTENANCE' or vehicle.status == 'DAMAGED' or vehicle.status == 'UNAVAILABLE' %}
+      <p class="alert alert-light border mt-3">This car is temporarily unavailable. Save it for later or browse another car.</p>
+      {% elif user.is_authenticated %}
+      <a class="btn btn-primary btn-lg w-100 mt-3" href="{% url 'bookings:create' vehicle.id %}">Choose dates &amp; book</a>
+      {% else %}
+      <a class="btn btn-primary btn-lg w-100 mt-3" href="{% url 'accounts:login' %}?next={% url 'bookings:create' vehicle.id %}">Sign in to book</a>
+      <p class="small text-muted text-center mt-2">New here? <a href="{% url 'accounts:register' %}?next={% url 'bookings:create' vehicle.id %}">Create an account</a> to manage your rentals.</p>
+      {% endif %}
+      <p class="small text-muted mt-3">Availability is checked for your selected dates. Your booking is confirmed after staff review.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Staff &amp; admin sign-in | RideFlow{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+<link rel="stylesheet" href="{% static 'css/admin_login.css' %}">
+{% endblock %}
+{% block navigation %}
+<nav class="staff-login-nav" aria-label="Staff portal navigation"><div class="container d-flex justify-content-between align-items-center flex-wrap gap-2"><a class="fw-bold" href="{% url 'core:home' %}">RideFlow <span class="fw-normal">/ Operations</span></a><a href="{% url 'accounts:login' %}">Customer sign-in →</a></div></nav>
+{% endblock %}
+{% block footer %}<footer class="text-center small text-secondary py-4">RideFlow · Staff &amp; administration</footer>{% endblock %}
+{% block content %}
+<section class="staff-login-page" aria-labelledby="staff-login-title">
+  <div class="staff-login-card">
+    <header class="staff-login-header">
+      <span class="staff-login-mark" aria-hidden="true">R</span>
+      <span class="auth-eyebrow">RIDEFLOW OPERATIONS</span>
+      <h1 id="staff-login-title">Staff &amp; admin sign-in</h1>
+      <p>Manage the fleet, bookings and rental operations.</p>
+    </header>
+    <div class="staff-login-body">
+      <p class="staff-access-note">For authorised staff and administrators. Staff accounts are created by an administrator.</p>
+      <form method="post" action="{% url 'admin:login' %}" class="auth-form" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}<div class="auth-error-summary" role="alert">{% for error in form.non_field_errors %}<p>{{ error }}</p>{% endfor %}</div>{% endif %}
+        {% include 'accounts/auth_field.html' with field=form.username %}
+        {% include 'accounts/auth_field.html' with field=form.password %}
+        <input type="hidden" name="next" value="{{ next }}">
+        <button type="submit" class="auth-submit">Sign in to operations <span aria-hidden="true">→</span></button>
+      </form>
+      <div class="auth-switch">Renting a car? <a href="{% url 'accounts:login' %}">Customer sign-in</a></div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{% static 'js/auth.js' %}" defer></script>{% endblock %}

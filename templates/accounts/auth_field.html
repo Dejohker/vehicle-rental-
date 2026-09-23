@@ -1,0 +1,14 @@
+<div class="auth-field{% if field.errors %} auth-field-invalid{% endif %}">
+  <label for="{{ field.id_for_label }}">{{ field.label }}{% if not field.field.required %} <span class="auth-optional">(optional)</span>{% elif field.name == 'first_name' or field.name == 'last_name' %} <span class="auth-optional">(required)</span>{% endif %}</label>
+  {% if field.field.widget.input_type == 'password' %}
+  <div class="auth-password">
+    {{ field }}
+    <button type="button" class="auth-password-toggle" data-password-toggle aria-controls="{{ field.id_for_label }}" aria-pressed="false" aria-label="Show {{ field.label|lower }}" hidden>Show</button>
+  </div>
+  <p class="auth-caps-warning" data-caps-warning="{{ field.id_for_label }}" role="status" hidden>Caps Lock is on.</p>
+  {% else %}
+  {{ field }}
+  {% endif %}
+  {% if field.help_text %}<div class="auth-help" id="{{ field.auto_id }}_helptext">{{ field.help_text|safe }}</div>{% endif %}
+  {% if field.errors %}<ul class="auth-field-errors" id="{{ field.auto_id }}_error" role="alert">{% for error in field.errors %}<li>{{ error }}</li>{% endfor %}</ul>{% endif %}
+</div>

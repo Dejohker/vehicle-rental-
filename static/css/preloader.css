@@ -1,0 +1,22 @@
+.ride-preloader[hidden] { display: none !important; }
+.ride-preloader { position: fixed; inset: 0; z-index: 10000; overflow: hidden; background: radial-gradient(ellipse at 50% 55%, #183d6c 0%, #0c1c34 42%, #060f20 100%); color: #eff7ff; animation: ride-loader-failsafe .2s 7.5s forwards; }
+.ride-preloader-brand { position: absolute; top: 25%; left: 0; right: 0; text-align: center; font: 750 clamp(2rem, 6vw, 3.4rem)/1.1 system-ui, sans-serif; letter-spacing: -.055em; }
+.ride-preloader-brand span { display: block; margin-top: 1.1rem; font-size: .6rem; font-weight: 550; letter-spacing: .25em; color: #aac3e6; }
+.ride-preloader-road { position: absolute; top: calc(55% + 47px); width: 100%; height: 1px; background: linear-gradient(90deg, transparent, #508dd4, transparent); box-shadow: 0 0 25px 2px #318bff3d; }
+.ride-preloader-car { position: absolute; bottom: calc(45% - 53px); left: 50%; width: clamp(225px, 30vw, 340px); margin-left: clamp(-170px, -15vw, -112.5px); will-change: transform; animation: ride-car-zoom 6.3s cubic-bezier(.4, 0, .85, .35) both; }
+.ride-preloader-car svg { display: block; width: 100%; overflow: visible; filter: drop-shadow(0 3px 12px #388eff33); }
+.ride-wheel { transform-box: fill-box; transform-origin: center; animation: ride-wheel-spin .65s linear infinite; }
+.ride-speed-lines { animation: ride-speed-streak .55s linear infinite alternate; }
+.ride-preloader-cracks { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; filter: drop-shadow(0 0 4px #85beff77); animation: ride-glass-crack 2.7s 4s ease-out both; }
+.ride-preloader-caption { position: absolute; bottom: 23%; left: 1rem; right: 1rem; margin: 0; color: #b8cee9; text-align: center; font: 400 .8rem/1.5 system-ui, sans-serif; letter-spacing: .055em; }
+.ride-preloader-skip { position: absolute; z-index: 1; top: max(1.25rem, env(safe-area-inset-top)); right: 1.25rem; min-height: 44px; padding: .5rem .9rem; border: 1px solid #829abb70; border-radius: 999px; background: #12233c; color: #dcecff; font: 500 .78rem system-ui, sans-serif; cursor: pointer; }
+.ride-preloader-skip:hover { background: #203c60; }
+.ride-preloader-skip:focus-visible { outline: 3px solid #9eceff; outline-offset: 4px; }
+.ride-preloader.is-leaving { pointer-events: none; animation: ride-loader-exit .3s ease-out forwards; }
+@keyframes ride-car-zoom { 0% { transform: translateX(-80vw) scale(.92); } 32% { transform: translateX(-35px) scale(1); } 48% { transform: translateX(0) scale(1); } 60% { transform: translateX(35px) skewX(-4deg); } 100% { transform: translateX(100vw) skewX(-8deg); } }
+@keyframes ride-wheel-spin { to { transform: rotate(360deg); } }
+@keyframes ride-speed-streak { from { opacity: .3; transform: translateX(0); } to { opacity: .9; transform: translateX(-16px); } }
+@keyframes ride-glass-crack { 0% { opacity: 0; transform: scale(.99); } 12% { opacity: .85; transform: scale(1); } 52% { opacity: .48; } 100% { opacity: .12; } }
+@keyframes ride-loader-exit { to { opacity: 0; visibility: hidden; transform: scale(1.035); } }
+@keyframes ride-loader-failsafe { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+@media (prefers-reduced-motion: reduce) { .ride-preloader { display: none !important; } .ride-preloader, .ride-preloader * { animation: none !important; } }

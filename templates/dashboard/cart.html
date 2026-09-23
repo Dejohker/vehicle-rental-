@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}My cart | RideFlow{% endblock %}
+{% block content %}
+<div class="container page-section">
+  <header class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4">
+    <div><span class="eyebrow text-primary">READY FOR YOUR NEXT JOURNEY?</span><h1 class="mt-2">My cart</h1><p class="text-muted mb-0">Your saved cars and pending bookings, together in one place.</p></div>
+    <a class="btn btn-primary" href="{% url 'vehicles:list' %}">Browse more cars</a>
+  </header>
+
+  {% if not saved_cars and not pending_orders %}
+  <div class="empty-state mb-5"><h2 class="h4">Your cart is empty</h2><p>Save a car you like or make a booking. You'll find it here when you're ready to continue.</p><a class="btn btn-outline-primary" href="{% url 'vehicles:list' %}">Find a car</a></div>
+  {% else %}
+  <nav class="d-flex flex-wrap gap-2 mb-4" aria-label="Cart sections"><a class="btn btn-outline-secondary" href="#pending-orders">Pending bookings ({{ pending_orders|length }})</a><a class="btn btn-outline-secondary" href="#saved-cars">Saved cars ({{ saved_cars|length }})</a></nav>
+  {% endif %}
+
+  <section id="pending-orders" class="mb-5" aria-labelledby="pending-heading" style="scroll-margin-top: 6rem;">
+    <h2 id="pending-heading" class="h4">Pending bookings <span class="badge bg-light text-dark">{{ pending_orders|length }}</span></h2>
+    <p class="text-muted">Continue payment on WhatsApp or open a booking to review or cancel it. Staff confirm your booking after review.</p>
+    {% for item in pending_orders %}
+    <article class="card card-body shadow-sm mb-3">
+      <div class="d-flex justify-content-between flex-wrap gap-3">
+        <div>
+          <span class="badge status-pending mb-2">Pending confirmation</span>
+          <h3 class="h5">{{ item.booking.vehicle }}</h3>
+          <p class="mb-1">{{ item.booking.pickup_date }} – {{ item.booking.return_date }}</p>
+          <p class="small mb-1">{{ item.booking.number_of_days }} rental day{{ item.booking.number_of_days|pluralize }} · Rental ₦{{ item.booking.rental_amount|floatformat:2 }} · Deposit ₦{{ item.booking.security_deposit|floatformat:2 }}</p>
+          <p class="small text-muted mb-0">Reference {{ item.booking.booking_reference }}</p>
+        </div>
+        <div><span class="small text-muted">Amount outstanding</span><p class="h5 mt-1">₦{{ item.balance|floatformat:2 }}</p></div>
+      </div>
+      <div class="d-flex flex-wrap align-items-center gap-2 mt-3">
+        {% if item.whatsapp_url %}<a class="btn btn-success" href="{{ item.whatsapp_url }}" rel="noreferrer">Continue payment on WhatsApp</a>{% elif not item.balance %}<span class="text-success small">No payment outstanding · awaiting staff confirmation</span>{% endif %}
+        <a class="btn btn-outline-primary" href="{% url 'bookings:detail' item.booking.booking_reference %}">View booking</a>
+      </div>
+    </article>
+    {% empty %}<div class="card card-body bg-light border-0">No pending bookings. <a class="mt-2" href="{% url 'bookings:list' %}">View all my bookings</a></div>{% endfor %}
+  </section>
+
+  <section id="saved-cars" aria-labelledby="saved-heading" style="scroll-margin-top: 6rem;">
+    <h2 id="saved-heading" class="h4">Saved cars <span class="badge bg-light text-dark">{{ saved_cars|length }}</span></h2>
+    <p class="text-muted">Choose pickup and return dates below, review the estimate, then continue to payment. Each car is booked separately. Click its Saved button to remove it.</p>
+    {% if saved_cars %}<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">{% for saved in saved_cars %}{% include 'partials/vehicle_card.html' with vehicle=saved.vehicle %}{% endfor %}</div>
+    {% else %}<div class="card card-body bg-light border-0">No saved cars yet. <a class="mt-2" href="{% url 'vehicles:list' %}">Browse cars to start your shortlist</a></div>{% endif %}
+  </section>
+  <p class="small text-muted mt-4">The cart count includes each saved car and each pending booking. A car you've both saved and booked appears in both sections.</p>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'js/cart-checkout.js' %}"></script>{% endblock %}

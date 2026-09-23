@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}{{ booking.booking_reference }} | RideFlow{% endblock %}
+{% block content %}
+<div class="container page-section narrow">
+  <div class="d-flex justify-content-between gap-3">
+    <div><span class="eyebrow">BOOKING</span><h1>{{ booking.booking_reference }}</h1></div>
+    <span class="badge status-{{ booking.status|lower }} align-self-start">{{ booking.get_status_display }}</span>
+  </div>
+  <div class="card card-body shadow-sm">
+    <h2 class="h4">{{ booking.vehicle }}</h2>
+    <dl class="row">
+      <dt class="col-6">Pickup</dt><dd class="col-6">{{ booking.pickup_date }}</dd>
+      <dt class="col-6">Return</dt><dd class="col-6">{{ booking.return_date }}</dd>
+      <dt class="col-6">Duration</dt><dd class="col-6">{{ booking.number_of_days }} days</dd>
+      <dt class="col-6">Rental amount</dt><dd class="col-6">₦{{ booking.rental_amount }}</dd>
+      <dt class="col-6">Deposit</dt><dd class="col-6">₦{{ booking.security_deposit }}</dd>
+      <dt class="col-6">Booking total</dt><dd class="col-6">₦{{ booking.total_amount }}</dd>
+      <dt class="col-6">Return charges</dt><dd class="col-6">₦{{ booking.extra_charges|floatformat:2 }}</dd>
+      <dt class="col-6">Total due</dt><dd class="col-6 fw-bold">₦{{ booking.amount_due|floatformat:2 }}</dd>
+      <dt class="col-6">Paid</dt><dd class="col-6">₦{{ booking.amount_paid|floatformat:2 }}</dd>
+      <dt class="col-6">Outstanding</dt><dd class="col-6">₦{{ booking.outstanding_balance|floatformat:2 }}</dd>
+    </dl>
+    {% if whatsapp_payment_url %}<div class="mb-3"><a class="btn btn-success" href="{{ whatsapp_payment_url }}" rel="noreferrer">Pay via WhatsApp</a><p class="small text-muted mt-2">Contact us to arrange payment. Staff will verify payment before updating your booking.</p></div>{% endif %}
+    {% if booking.status == 'PENDING' or booking.status == 'CONFIRMED' or booking.status == 'READY_FOR_PICKUP' %}
+    <form method="post" action="{% url 'bookings:cancel' booking.booking_reference %}" data-confirm="Cancel this booking?">
+      {% csrf_token %}<button class="btn btn-outline-danger">Cancel booking</button>
+    </form>
+    {% elif booking.status == 'CANCELLED' or booking.status == 'REJECTED' %}
+    <p class="text-muted">No rental balance is due. Contact staff about any payment already made; refunds are handled manually.</p>
+    {% endif %}
+  </div>
+  {% include 'bookings/return_summary.html' %}
+  <h2 class="h4 mt-4">Payment history</h2>
+  <div class="list-group">
+    {% for payment in booking.payments.all %}
+    <a class="list-group-item list-group-item-action" href="{% url 'payments:detail' payment.pk %}">{{ payment.transaction_reference }} · ₦{{ payment.amount }} · {{ payment.get_payment_status_display }}</a>
+    {% empty %}<p class="text-muted">No payments recorded yet.</p>{% endfor %}
+  </div>
+</div>
+{% endblock %}

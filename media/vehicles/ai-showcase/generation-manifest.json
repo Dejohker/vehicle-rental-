@@ -1,0 +1,320 @@
+{
+  "tool": "built-in image_gen",
+  "images": [
+    {
+      "subject": "2006 Mercedes-Benz C-Class",
+      "file": "demo-mercedes-benz-c-class-2006.png",
+      "prompt": "Use case: product-mockup. Silver 2006 Mercedes-Benz C-Class sedan, period-appropriate stock exterior, photorealistic studio rendering, pale grey studio, soft lighting, front three-quarter view, full car centered, landscape 3:2, no people/text/prices/watermark/collage. AI illustration for demo inventory."
+    },
+    {
+      "subject": "2008 Mercedes-Benz E-Class",
+      "file": "demo-mercedes-benz-e-class-2008.png",
+      "prompt": "Use case: product-mockup. Asset: individual car rental catalogue image. Subject: 2008 Mercedes-Benz E-Class, stock exterior appropriate to that exact model year. Photorealistic automotive studio rendering, metallic silver or deep graphite paint. Clean pale grey studio backdrop and subtle floor shadow, soft professional lighting and realistic reflections. Landscape 3:2, front three-quarter view, one complete car centered, all wheels and body within frame with generous margins. No people, text, prices, watermark or collage. AI illustration for demo inventory."
+    },
+    {
+      "subject": "2010 Mercedes-Benz S-Class",
+      "file": "demo-mercedes-benz-s-class-2010.png",
+      "prompt": "Use case: product-mockup. Asset: individual car rental catalogue image. Subject: 2010 Mercedes-Benz S-Class, stock exterior appropriate to that exact model year. Photorealistic automotive studio rendering, metallic silver or deep graphite paint. Clean pale grey studio backdrop and subtle floor shadow, soft professional lighting and realistic reflections. Landscape 3:2, front three-quarter view, one complete car centered, all wheels and body within frame with generous margins. No people, text, prices, watermark or collage. AI illustration for demo inventory."
+    },
+    {
+      "subject": "2012 Mercedes-Benz C-Class",
+      "file": "demo-mercedes-benz-c-class-2012.png",
+      "prompt": "Use case: product-mockup. Asset: individual car rental catalogue image. Subject: 2012 Mercedes-Benz C-Class, stock exterior appropriate to that exact model year. Photorealistic automotive studio rendering, metallic silver or deep graphite paint. Clean pale grey studio backdrop and subtle floor shadow, soft professional lighting and realistic reflections. Landscape 3:2, front three-quarter view, one complete car centered, all wheels and body within frame with generous margins. No people, text, prices, watermark or collage. AI illustration for demo inventory."
+    },
+    {
+      "subject": "2014 Mercedes-Benz E-Class",
+      "file": "demo-mercedes-benz-e-class-2014.png",
+      "prompt": "Use case: product-mockup. Asset: individual car rental catalogue image. Subject: 2014 Mercedes-Benz E-Class, stock exterior appropriate to that exact model year. Photorealistic automotive studio rendering, metallic silver or deep graphite paint. Clean pale grey studio backdrop and subtle floor shadow, soft professional lighting and realistic reflections. Landscape 3:2, front three-quarter view, one complete car centered, all wheels and body within frame with generous margins. No people, text, prices, watermark or collage. AI illustration for demo inventory."
+    },
+    {
+      "subject": "2016 Mercedes-Benz GLE",
+      "file": "demo-mercedes-benz-gle-2016.png",
+      "prompt": "Use case: product-mockup. Asset: individual car rental catalogue image. Subject: 2016 Mercedes-Benz GLE, stock exterior appropriate to that exact model year. Photorealistic automotive studio rendering, metallic silver or deep graphite paint. Clean pale grey studio backdrop and subtle floor shadow, soft professional lighting and realistic reflections. Landscape 3:2, front three-quarter view, one complete car centered, all wheels and body within frame with generous margins. No people, text, prices, watermark or collage. AI illustration for demo inventory."
+    },
+    {
+      "subject": "2018 Mercedes-Benz GLC",
+      "file": "demo-mercedes-benz-glc-2018.png",
+      "prompt": "Use case: product-mockup. Asset: individual car rental catalogue image. Subject: 2018 Mercedes-Benz GLC, stock exterior appropriate to that exact model year. Photorealistic automotive studio rendering, metallic silver or deep graphite paint. Clean pale grey studio backdrop and subtle floor shadow, soft professional lighting and realistic reflections. Landscape 3:2, front three-quarter view, one complete car centered, all wheels and body within frame with generous margins. No people, text, prices, watermark or collage. AI illustration for demo inventory."
+    },
+    {
+      "subject": "2020 Mercedes-Benz G-Class",
+      "file": "demo-mercedes-benz-g-class-2020.png",
+      "prompt": "Use case: product-mockup. Asset: individual car rental catalogue image. Subject: 2020 Mercedes-Benz G-Class, stock exterior appropriate to that exact model year. Photorealistic automotive studio rendering, metallic silver or deep graphite paint. Clean pale grey studio backdrop and subtle floor shadow, soft professional lighting and realistic reflections. Landscape 3:2, front three-quarter view, one complete car centered, all wheels and body within frame with generous margins. No people, text, prices, watermark or collage. AI illustration for demo inventory."
+    },
+    {
+      "subject": "2022 Mercedes-Benz S-Class",
+      "file": "demo-mercedes-benz-s-class-2022.png",
+      "prompt": "Use case: product-mockup. Asset: individual car rental catalogue image. Subject: 2022 Mercedes-Benz S-Class, stock exterior appropriate to that exact model year. Photorealistic automotive studio rendering, metallic silver or deep graphite paint. Clean pale grey studio backdrop and subtle floor shadow, soft professional lighting and realistic reflections. Landscape 3:2, front three-quarter view, one complete car centered, all wheels and body within frame with generous margins. No people, text, prices, watermark or collage. AI illustration for demo inventory."
+    },
+    {
+      "subject": "2024 Mercedes-Benz AMG GT",
+      "file": "demo-mercedes-benz-amg-gt-2024.png",
+      "prompt": "Use case: product-mockup. Individual car rental catalogue image of 2024 Mercedes-Benz AMG GT, accurate stock exterior for this model year. Photorealistic studio rendering, metallic silver paint. Pale grey seamless studio, softbox reflections and floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one car, no people, overlay text, prices, watermark or collage. Demo inventory illustration."
+    },
+    {
+      "subject": "2026 Mercedes-Benz E-Class",
+      "file": "demo-mercedes-benz-e-class-2026.png",
+      "prompt": "Use case: product-mockup. Individual car rental catalogue image of 2026 Mercedes-Benz E-Class, accurate stock exterior for this model year. Photorealistic studio rendering, metallic silver paint. Pale grey seamless studio, softbox reflections and floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one car, no people, overlay text, prices, watermark or collage. Demo inventory illustration."
+    },
+    {
+      "subject": "2006 Ferrari F430",
+      "file": "demo-ferrari-f430-2006.png",
+      "prompt": "Use case: product-mockup. Individual car rental catalogue image of 2006 Ferrari F430, accurate stock exterior for this model year. Photorealistic studio rendering, red paint. Pale grey seamless studio, softbox reflections and floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one car, no people, overlay text, prices, watermark or collage. Demo inventory illustration."
+    },
+    {
+      "subject": "2012 Ferrari 458 Italia",
+      "file": "demo-ferrari-458-italia-2012.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2012 Ferrari 458 Italia, factory stock exterior appropriate to that model year. Photorealistic studio rendering in red paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2017 Ferrari 488 GTB",
+      "file": "demo-ferrari-488-gtb-2017.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2017 Ferrari 488 GTB, factory stock exterior appropriate to that model year. Photorealistic studio rendering in red paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2021 Ferrari F8 Tributo",
+      "file": "demo-ferrari-f8-tributo-2021.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2021 Ferrari F8 Tributo, factory stock exterior appropriate to that model year. Photorealistic studio rendering in red paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2023 Ferrari Roma",
+      "file": "demo-ferrari-roma-2023.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2023 Ferrari Roma, factory stock exterior appropriate to that model year. Photorealistic studio rendering in red paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2007 Rolls-Royce Phantom",
+      "file": "demo-rolls-royce-phantom-2007.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2007 Rolls-Royce Phantom, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2011 Rolls-Royce Ghost",
+      "file": "demo-rolls-royce-ghost-2011.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2011 Rolls-Royce Ghost, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2015 Rolls-Royce Wraith",
+      "file": "demo-rolls-royce-wraith-2015.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2015 Rolls-Royce Wraith, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2020 Rolls-Royce Cullinan",
+      "file": "demo-rolls-royce-cullinan-2020.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2020 Rolls-Royce Cullinan, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2024 Rolls-Royce Ghost",
+      "file": "demo-rolls-royce-ghost-2024.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2024 Rolls-Royce Ghost, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2006 Toyota Corolla",
+      "file": "demo-toyota-corolla-2006.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2006 Toyota Corolla, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2009 Toyota Camry",
+      "file": "demo-toyota-camry-2009.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2009 Toyota Camry, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2013 Toyota RAV4",
+      "file": "demo-toyota-rav4-2013.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2013 Toyota RAV4, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2017 Toyota Land Cruiser",
+      "file": "demo-toyota-land-cruiser-2017.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2017 Toyota Land Cruiser, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2020 Toyota Corolla",
+      "file": "demo-toyota-corolla-2020.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2020 Toyota Corolla, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2025 Toyota Camry",
+      "file": "demo-toyota-camry-2025.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2025 Toyota Camry, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2026 Toyota Corolla",
+      "file": "demo-toyota-corolla-2026.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2026 Toyota Corolla, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2007 Honda Civic",
+      "file": "demo-honda-civic-2007.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2007 Honda Civic, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2010 Honda Accord",
+      "file": "demo-honda-accord-2010.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2010 Honda Accord, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2014 Honda CR-V",
+      "file": "demo-honda-cr-v-2014.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2014 Honda CR-V, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2019 Honda Accord",
+      "file": "demo-honda-accord-2019.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2019 Honda Accord, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2023 Honda Civic",
+      "file": "demo-honda-civic-2023.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2023 Honda Civic, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2026 Honda CR-V",
+      "file": "demo-honda-cr-v-2026.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2026 Honda CR-V, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2008 Lexus IS 250",
+      "file": "demo-lexus-is-250-2008.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2008 Lexus IS 250, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2011 Lexus RX 350",
+      "file": "demo-lexus-rx-350-2011.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2011 Lexus RX 350, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2016 Lexus ES 350",
+      "file": "demo-lexus-es-350-2016.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2016 Lexus ES 350, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2020 Lexus LX 570",
+      "file": "demo-lexus-lx-570-2020.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2020 Lexus LX 570, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2025 Lexus RX 350",
+      "file": "demo-lexus-rx-350-2025.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2025 Lexus RX 350, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2006 BMW 3 Series",
+      "file": "demo-bmw-3-series-2006.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2006 BMW 3 Series, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2009 BMW 5 Series",
+      "file": "demo-bmw-5-series-2009.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2009 BMW 5 Series, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2013 BMW X5",
+      "file": "demo-bmw-x5-2013.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2013 BMW X5, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2018 BMW 7 Series",
+      "file": "demo-bmw-7-series-2018.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2018 BMW 7 Series, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2022 BMW M4",
+      "file": "demo-bmw-m4-2022.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2022 BMW M4, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2026 BMW X6",
+      "file": "demo-bmw-x6-2026.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2026 BMW X6, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2007 Porsche 911 Carrera",
+      "file": "demo-porsche-911-carrera-2007.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2007 Porsche 911 Carrera, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2012 Porsche Cayenne",
+      "file": "demo-porsche-cayenne-2012.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2012 Porsche Cayenne, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2016 Porsche Panamera",
+      "file": "demo-porsche-panamera-2016.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2016 Porsche Panamera, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2021 Porsche 718 Cayman",
+      "file": "demo-porsche-718-cayman-2021.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2021 Porsche 718 Cayman, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2026 Porsche Macan",
+      "file": "demo-porsche-macan-2026.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2026 Porsche Macan, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2010 Audi A4",
+      "file": "demo-audi-a4-2010.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2010 Audi A4, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2019 Audi Q7",
+      "file": "demo-audi-q7-2019.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2019 Audi Q7, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2015 Bentley Continental GT",
+      "file": "demo-bentley-continental-gt-2015.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2015 Bentley Continental GT, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2022 Bentley Bentayga",
+      "file": "demo-bentley-bentayga-2022.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2022 Bentley Bentayga, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2018 Lamborghini Huracan",
+      "file": "demo-lamborghini-huracan-2018.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2018 Lamborghini Huracan, factory stock exterior appropriate to that model year. Photorealistic studio rendering in yellow paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2023 Lamborghini Urus",
+      "file": "demo-lamborghini-urus-2023.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2023 Lamborghini Urus, factory stock exterior appropriate to that model year. Photorealistic studio rendering in yellow paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2014 Land Rover Range Rover Sport",
+      "file": "demo-land-rover-range-rover-sport-2014.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2014 Land Rover Range Rover Sport, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2024 Land Rover Defender",
+      "file": "demo-land-rover-defender-2024.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2024 Land Rover Defender, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2017 Nissan Altima",
+      "file": "demo-nissan-altima-2017.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2017 Nissan Altima, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2020 Ford Mustang",
+      "file": "demo-ford-mustang-2020.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2020 Ford Mustang, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2021 Hyundai Elantra",
+      "file": "demo-hyundai-elantra-2021.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2021 Hyundai Elantra, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2023 Kia Sportage",
+      "file": "demo-kia-sportage-2023.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2023 Kia Sportage, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    },
+    {
+      "subject": "2024 Mazda CX-5",
+      "file": "demo-mazda-cx-5-2024.png",
+      "prompt": "Use case: product-mockup. Asset: one individual car rental catalogue image. Subject: 2024 Mazda CX-5, factory stock exterior appropriate to that model year. Photorealistic studio rendering in metallic silver or deep graphite paint. Pale grey seamless studio, softbox reflections and subtle floor shadow. Landscape 3:2 front three-quarter view, complete car centered with generous margins. Exactly one vehicle, no people, overlay text, prices, watermark or collage. AI illustration for demo inventory, not an actual fleet photograph."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{% extends 'accounts/auth_base.html' %}
+{% block title %}Sign in | RideFlow{% endblock %}
+{% block auth_eyebrow %}GOOD TO SEE YOU AGAIN{% endblock %}
+{% block auth_heading %}Welcome back{% endblock %}
+{% block auth_description %}Sign in to book a ride and manage your rentals.{% endblock %}
+{% block auth_form %}
+<form method="post" action="{% url 'accounts:login' %}" class="auth-form" novalidate>
+  {% csrf_token %}
+  {% if form.non_field_errors %}
+  <div class="auth-error-summary" role="alert">
+    <strong>We couldn't sign you in.</strong>
+    {% for error in form.non_field_errors %}<p>{{ error }}</p>{% endfor %}
+  </div>
+  {% endif %}
+  {% include 'accounts/auth_field.html' with field=form.username %}
+  {% include 'accounts/auth_field.html' with field=form.password %}
+  {% if next %}<input type="hidden" name="next" value="{{ next }}">{% endif %}
+  <button class="auth-submit" type="submit">Sign in <span aria-hidden="true">→</span></button>
+  <p class="auth-form-note">Your password is case-sensitive. Check Caps Lock if you have trouble.</p>
+</form>
+{% endblock %}
+{% block auth_switch %}New to RideFlow? <a href="{% url 'accounts:register' %}{% if next %}?next={{ next|urlencode }}{% endif %}">Create an account</a><br><a href="{% url 'admin:login' %}?next={% url 'dashboard:staff' %}">Staff / admin sign-in</a>{% endblock %}

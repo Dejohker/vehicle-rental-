@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Arrange payment | RideFlow{% endblock %}
+{% block preloader %}{% endblock %}
+{% block content %}
+<div class="container page-section narrow text-center">
+  <div class="success-icon" aria-hidden="true">✓</div>
+  <h1>Booking saved</h1>
+  <p>Reference <strong>{{ booking.booking_reference }}</strong> · {{ booking.get_status_display }}</p>
+  <div class="card card-body shadow-sm my-4">
+    <h2 class="h4">{{ booking.vehicle }}</h2>
+    <p>{{ booking.pickup_date }} – {{ booking.return_date }}</p>
+    <p class="fs-5">Amount outstanding: <strong>₦{{ booking.outstanding_balance|floatformat:2 }}</strong></p>
+    {% if whatsapp_payment_url %}
+      {% if auto_redirect %}<p role="status">Opening WhatsApp to arrange your payment…</p>{% endif %}
+      <a id="whatsapp-payment-link" class="btn btn-success btn-lg" href="{{ whatsapp_payment_url }}" rel="noreferrer" data-booking-reference="{{ booking.booking_reference }}">Pay via WhatsApp</a>
+      <p class="small text-muted mt-3 mb-0">If WhatsApp doesn't open automatically, use the button above. Send the prefilled message to request payment instructions. Opening WhatsApp does not confirm payment or your booking; staff will verify both.</p>
+      <noscript><p class="mt-2">Select Pay via WhatsApp to continue.</p></noscript>
+    {% else %}<p class="mb-0">No WhatsApp payment is needed for this booking. View its details for the current balance and status.</p>{% endif %}
+  </div>
+  <a class="btn btn-outline-primary" href="{% url 'bookings:detail' booking.booking_reference %}">View booking</a>
+  <a class="btn btn-link" href="{% url 'dashboard:customer' %}">My rentals</a>
+</div>
+{% if auto_redirect %}<script src="{% static 'js/whatsapp-checkout.js' %}"></script>{% endif %}
+{% endblock %}

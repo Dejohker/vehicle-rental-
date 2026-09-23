@@ -1,0 +1,15 @@
+{% if not user.is_staff %}
+  {% if user.is_authenticated %}
+  <form method="post" action="{% if vehicle.pk in saved_vehicle_ids %}{% url 'vehicles:unsave' vehicle.pk %}{% else %}{% url 'vehicles:save' vehicle.pk %}{% endif %}" class="vehicle-save-form">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+    {% if vehicle.pk in saved_vehicle_ids %}
+    <button type="submit" class="btn btn-sm btn-outline-primary" aria-label="Remove {{ vehicle }} from saved cars"><span aria-hidden="true">♥</span> Saved</button>
+    {% elif vehicle.active %}
+    <button type="submit" class="btn btn-sm btn-outline-secondary" aria-label="Save {{ vehicle }}"><span aria-hidden="true">♡</span> Save car</button>
+    {% endif %}
+  </form>
+  {% elif vehicle.active %}
+  <a class="btn btn-sm btn-outline-secondary" href="{% url 'accounts:login' %}?next={{ vehicle.get_absolute_url|urlencode }}" title="Sign in to save this car"><span aria-hidden="true">♡</span> Save car</a>
+  {% endif %}
+{% endif %}

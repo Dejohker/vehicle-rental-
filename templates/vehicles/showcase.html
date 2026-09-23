@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Car showcase · 2006–2026 | RideFlow{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/showcase.css' %}">{% endblock %}
+{% block content %}
+<div class="showcase-page">
+  <section class="showcase-hero">
+    <div class="container">
+      <div class="showcase-intro"><span class="eyebrow">THE RIDEFLOW COLLECTION</span><h1>Find a car.<br><em>Make it your journey.</em></h1><p>Everyday favourites. Executive comfort. Something extraordinary. Explore models from 2006 to 2026 and find your next drive.</p><a href="#collection" class="btn btn-light">Explore the collection ↓</a></div>
+      <div class="showcase-hero-aside"><span>2006 — 2026</span><strong>{{ catalogue_count }}</strong><p>cars to explore</p><span>{{ brand_choices|length }} brands · One collection</span></div>
+    </div>
+  </section>
+  <div class="container py-5" id="collection">
+    <nav class="brand-strip" aria-label="Explore by brand">
+      <a href="{% url 'vehicles:showcase' %}#collection" class="brand-chip{% if not request.GET.brand %} selected{% endif %}">All brands</a>
+      {% for item in brand_choices %}<a href="{% url 'vehicles:showcase' %}?brand={{ item.brand|urlencode }}#collection" class="brand-chip{% if request.GET.brand == item.brand %} selected{% endif %}">{{ item.brand }} <span>{{ item.total }}</span></a>{% endfor %}
+    </nav>
+    <div class="showcase-disclosure">Expanded collection: demo cars and prices are labelled on each card. AI-generated images and other illustrations are representative, not photos of actual rental cars. Model details may vary.</div>
+    <form method="get" action="{% url 'vehicles:showcase' %}#collection" class="showcase-filters">
+      {% for error in filter_form.non_field_errors %}<p class="text-danger w-100" role="alert">{{ error }}</p>{% endfor %}
+      {% for field in filter_form %}
+      {% if field.name == 'q' or field.name == 'brand' or field.name == 'category' or field.name == 'year_min' or field.name == 'year_max' or field.name == 'max_price' or field.name == 'sort' %}
+      <div><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{% for error in field.errors %}<p class="text-danger small mt-1" role="alert">{{ error }}</p>{% endfor %}</div>
+      {% else %}{{ field.as_hidden }}{% for error in field.errors %}<p class="text-danger small" role="alert">{{ field.label }}: {{ error }}</p>{% endfor %}
+      {% endif %}
+      {% endfor %}
+      <div class="showcase-filter-actions"><button class="btn btn-primary" type="submit">Find my car</button><a href="{% url 'vehicles:showcase' %}#collection">Reset</a></div>
+    </form>
+    <div class="showcase-results-heading"><div><span class="eyebrow text-primary">PICK YOUR NEXT DRIVE</span><h2>{{ page_obj.paginator.count }} car{{ page_obj.paginator.count|pluralize }} in view</h2></div><p>Prices per day · Deposits shown in car details</p></div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 showcase-grid">
+      {% for vehicle in page_obj %}{% include 'partials/vehicle_card.html' %}
+      {% empty %}<div class="col-12 w-100"><div class="empty-state"><h3 class="h5">No cars match those filters.</h3><p>Try a different brand, year or price.</p><a class="btn btn-outline-primary" href="{% url 'vehicles:showcase' %}">View all cars</a></div></div>{% endfor %}
+    </div>
+    {% include 'partials/pagination.html' %}
+    <p class="small text-muted mt-4">Save keeps a car in your shortlist. Add to cart opens that shortlist in your cart. Choose dates to create a booking; adding a car alone does not reserve it.</p>
+  </div>
+</div>
+{% endblock %}

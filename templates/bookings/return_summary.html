@@ -1,0 +1,14 @@
+{% if booking.vehicle_return %}
+<section class="card card-body mt-4">
+  <h2 class="h4">Return summary</h2>
+  <dl class="row mb-0">
+    <dt class="col-6">Returned on</dt><dd class="col-6">{{ booking.vehicle_return.actual_return_date }}</dd>
+    <dt class="col-6">Days late</dt><dd class="col-6">{{ booking.vehicle_return.late_days }}</dd>
+    <dt class="col-6">Late fee</dt><dd class="col-6">₦{{ booking.vehicle_return.late_fee }}</dd>
+    <dt class="col-6">Damage charge</dt><dd class="col-6">₦{{ booking.vehicle_return.damage_charge }}</dd>
+    <dt class="col-6">Additional charge</dt><dd class="col-6">₦{{ booking.vehicle_return.additional_charge }}</dd>
+    <dt class="col-6">Damage reported</dt><dd class="col-6">{{ booking.vehicle_return.damage_reported|yesno:'Yes,No' }}</dd>
+  </dl>
+  {% if booking.vehicle_return.condition_notes %}<p class="mb-0">{{ booking.vehicle_return.condition_notes|linebreaksbr }}</p>{% endif %}
+</section>
+{% endif %}

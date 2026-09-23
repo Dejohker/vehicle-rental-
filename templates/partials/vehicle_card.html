@@ -1,0 +1,21 @@
+<div class="col">
+  <article class="card vehicle-card h-100 shadow-sm">
+    {% if vehicle.image %}<img src="{{ vehicle.image.url }}" class="card-img-top{% if vehicle.has_ai_image %} ai-car-image{% endif %}" alt="{% if vehicle.has_ai_image %}AI-generated illustration of {% endif %}{{ vehicle }}" loading="lazy" decoding="async">{% else %}{% include 'partials/vehicle_art.html' %}{% endif %}
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+        <span class="badge bg-light text-dark">{{ vehicle.category }}</span>
+        {% include 'partials/save_vehicle.html' %}
+      </div>
+      <h3 class="h5 mt-3">{{ vehicle }}</h3>
+      {% if vehicle.is_demo_listing %}<p class="small text-muted mb-2">Demo listing · illustrative rental price</p>{% endif %}
+      <p class="text-muted">{{ vehicle.get_transmission_display }} · {{ vehicle.number_of_seats }} seats · {{ vehicle.get_fuel_type_display }}</p>
+      {% if vehicle.active %}
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-auto">
+        <strong class="text-primary">₦{{ vehicle.price_per_day|floatformat:0 }}/day</strong>
+        <a href="{{ vehicle.get_absolute_url }}" class="btn btn-outline-primary">View car</a>
+      </div>
+      <div class="mt-3">{% if cart_checkout %}{% include 'partials/cart_checkout.html' %}{% else %}{% include 'partials/add_to_cart.html' %}{% endif %}</div>
+      {% else %}<p class="text-muted mb-0 mt-auto">This car is no longer listed for rental.</p>{% endif %}
+    </div>
+  </article>
+</div>

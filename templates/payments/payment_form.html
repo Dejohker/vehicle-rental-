@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<div class="container page-section narrow"><h1>Record payment</h1><form method="post" class="card card-body">{% csrf_token %}{{ form.as_p }}<button class="btn btn-primary">Record payment</button></form></div>{% endblock %}

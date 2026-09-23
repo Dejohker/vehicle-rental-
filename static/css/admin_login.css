@@ -1,0 +1,17 @@
+.staff-login-nav { padding: 1.2rem 0; background: #10213e; }
+.staff-login-nav a { color: #fff; text-decoration: none; font-size: .9rem; }
+.staff-login-nav a:focus-visible { outline: 3px solid #83acff; outline-offset: 3px; }
+.staff-login-page { min-height: 75vh; display: grid; place-items: center; padding: 3rem 1rem; background: #e9edf3; }
+.staff-login-card { width: min(100%, 490px); overflow: hidden; border: 1px solid #d8e0eb; border-radius: 18px; background: #fff; box-shadow: 0 20px 60px -30px #10213e70; }
+.staff-login-header { padding: 2rem 2.25rem; background: #10213e; color: #fff; }
+.staff-login-mark { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 1.5rem; border: 1px solid #8397b7; border-radius: 10px; font-size: 1.4rem; font-weight: 750; }
+.staff-login-header .auth-eyebrow { color: #b5c9e8; }
+.staff-login-header h1 { font-size: 1.85rem; letter-spacing: -.035em; font-weight: 700; }
+.staff-login-header p { margin: .75rem 0 0; color: #cad6e8; font-size: .88rem; line-height: 1.6; }
+.staff-login-body { padding: 2rem 2.25rem; }
+.staff-access-note { margin-bottom: 1.5rem; color: #606c80; font-size: .82rem; line-height: 1.7; }
+.staff-login-page .auth-submit { background: #10213e; border-color: #10213e; }
+.staff-login-page .auth-submit:hover { background: #243e65; }
+.staff-login-page :is(a, button):focus-visible { outline: 3px solid #83acff; outline-offset: 3px; }
+.staff-login-page [hidden] { display: none !important; }
+@media (max-width: 480px) { .staff-login-page { padding: 1.5rem .75rem; } .staff-login-header, .staff-login-body { padding: 1.5rem; } }

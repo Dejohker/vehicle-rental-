@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<div class="container page-section narrow"><h1>Process vehicle return</h1><p>{{ booking }} · expected {{ booking.return_date }}</p><form method="post" class="card card-body">{% csrf_token %}{{ form.as_p }}<button class="btn btn-primary">Process return</button></form></div>{% endblock %}

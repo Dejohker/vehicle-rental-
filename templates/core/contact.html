@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Contact | RideFlow{% endblock %}
+{% block content %}
+<div class="container page-section narrow">
+  <h1>Contact us</h1>
+  <p>Have a question about a vehicle or booking? Send us a message.</p>
+  <form method="post" class="card card-body shadow-sm">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary">Send message</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}My rentals | RideFlow{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/customer.css' %}">{% endblock %}
+{% block content %}
+<div class="customer-page">
+  <div class="container py-5">
+    <header class="rental-welcome">
+      <div><span class="eyebrow text-primary">MY RENTALS</span><h1>Hello, {{ user.first_name|default:user.username }}.</h1><p>Your cars, your bookings, your next journey.</p></div>
+      <a class="btn btn-primary" href="{% url 'vehicles:list' %}">Find a car <span aria-hidden="true">→</span></a>
+    </header>
+
+    {% if selected_vehicle %}
+    <section class="rental-resume mb-4" aria-label="Continue your car selection">
+      <div><h2 class="h5 mb-1">Still thinking about the {{ selected_vehicle }}?</h2><p class="mb-0">Your account is ready. Pick up where you left off.</p></div>
+      {% if selected_action == 'book' %}<a class="btn btn-primary" href="{% url 'bookings:create' selected_vehicle.pk %}">Continue booking</a>{% else %}<a class="btn btn-primary" href="{{ selected_vehicle.get_absolute_url }}">View your selected car</a>{% endif %}
+    </section>
+    {% endif %}
+
+    <div class="rental-counts">
+      <a href="{% url 'bookings:list' %}" class="rental-count"><span>Active rentals</span><strong>{{ active_rentals }}</strong><small>Cars you're currently renting</small></a>
+      <a href="{% url 'bookings:list' %}" class="rental-count"><span>Upcoming bookings</span><strong>{{ upcoming_bookings }}</strong><small>Your next planned rentals</small></a>
+      <a href="{% url 'vehicles:saved' %}" class="rental-count"><span>Saved cars</span><strong>{{ saved_count }}</strong><small>Your personal shortlist</small></a>
+    </div>
+
+    <div class="row g-4 mt-1">
+      <div class="col-lg-8">
+        {% if featured_booking %}
+        <section class="rental-panel rental-featured h-100">
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-4">
+            <span class="eyebrow text-primary">{% if current_rental %}YOUR CURRENT RENTAL{% else %}YOUR NEXT BOOKING{% endif %}</span>
+            <span class="badge status-{{ featured_booking.status|lower }}">{{ featured_booking.get_status_display }}</span>
+          </div>
+          <h2>{{ featured_booking.vehicle }}</h2>
+          <p class="text-muted">Reference {{ featured_booking.booking_reference }}</p>
+          <dl class="rental-dates">
+            <div><dt>Pickup</dt><dd>{{ featured_booking.pickup_date|date:'D, j M Y' }}</dd></div>
+            <div><dt>Return</dt><dd>{{ featured_booking.return_date|date:'D, j M Y' }}</dd></div>
+          </dl>
+          {% if featured_booking.status == 'PENDING' %}<p class="rental-notice">Your request is awaiting confirmation. Staff will review availability before pickup.</p>{% endif %}
+          {% if featured_booking.status == 'OVERDUE' %}<p class="rental-notice">Your rental is overdue. Please contact us to arrange your return.</p>{% endif %}
+          <a class="btn btn-primary" href="{% url 'bookings:detail' featured_booking.booking_reference %}">View rental details</a>
+        </section>
+        {% else %}
+        <section class="rental-panel rental-start h-100">
+          <span class="eyebrow text-primary">WHERE TO NEXT?</span>
+          <h2>{% if total_bookings %}Ready for your next rental?{% else %}Your first journey starts here.{% endif %}</h2>
+          <p>Explore the cars, choose your dates, and send your booking request. Your rental updates will appear right here.</p>
+          <a class="btn btn-primary" href="{% url 'vehicles:list' %}">Browse available cars</a>
+          <span class="rental-start-road" aria-hidden="true"></span>
+        </section>
+        {% endif %}
+      </div>
+      <aside class="col-lg-4">
+        <div class="rental-panel h-100">
+          <h2 class="h5">Your account</h2>
+          <a class="rental-account-link" href="{% url 'accounts:profile' %}"><span>My profile<small>Contact details and driver information</small></span><span aria-hidden="true">→</span></a>
+          <a class="rental-account-link" href="{% url 'bookings:list' %}"><span>Booking history<small>{{ completed_rentals }} completed rental{{ completed_rentals|pluralize }}</small></span><span aria-hidden="true">→</span></a>
+          <a class="rental-account-link" href="{% url 'core:contact' %}"><span>Need a hand?<small>Ask about a booking or a car</small></span><span aria-hidden="true">→</span></a>
+          {% if outstanding_payments %}<p class="rental-balance">Outstanding balance <strong>₦{{ outstanding_payments|floatformat:2 }}</strong><small>Open a booking to see its payments.</small></p>{% endif %}
+        </div>
+      </aside>
+    </div>
+
+    <section class="mt-5" aria-labelledby="saved-heading">
+      <div class="rental-section-heading"><div><h2 id="saved-heading">Cars you like</h2><p>Saved for later, ready when you are.</p></div><a href="{% url 'vehicles:saved' %}">View saved cars <span aria-hidden="true">→</span></a></div>
+      {% if saved_cars %}
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">{% for saved in saved_cars %}{% include 'partials/vehicle_card.html' with vehicle=saved.vehicle %}{% endfor %}</div>
+      {% else %}
+      <div class="rental-empty"><span class="rental-empty-heart" aria-hidden="true">♡</span><div><h3 class="h5">Found a car you like?</h3><p>Tap Save car to keep it here. You can decide on dates later.</p></div><a class="btn btn-outline-primary" href="{% url 'vehicles:list' %}">Explore cars</a></div>
+      {% endif %}
+    </section>
+
+    {% if recent_bookings %}
+    <section class="mt-5" aria-labelledby="recent-heading">
+      <div class="rental-section-heading"><h2 id="recent-heading">Recent bookings</h2><a href="{% url 'bookings:list' %}">View all bookings <span aria-hidden="true">→</span></a></div>
+      <div class="rental-panel p-0 overflow-hidden"><div class="table-responsive"><table class="table align-middle rental-table mb-0">
+        <thead><tr><th scope="col">Car</th><th scope="col">Rental dates</th><th scope="col">Status</th><th scope="col">Booking</th></tr></thead>
+        <tbody>{% for b in recent_bookings %}<tr><td><strong>{{ b.vehicle }}</strong></td><td>{{ b.pickup_date|date:'j M' }} – {{ b.return_date|date:'j M Y' }}</td><td><span class="badge status-{{ b.status|lower }}">{{ b.get_status_display }}</span></td><td><a href="{% url 'bookings:detail' b.booking_reference %}">{{ b.booking_reference }}</a></td></tr>{% endfor %}</tbody>
+      </table></div></div>
+    </section>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

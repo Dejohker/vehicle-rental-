@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Manage {{ booking.booking_reference }} | RideFlow{% endblock %}
+{% block content %}
+<div class="container page-section narrow">
+  <h1>{{ booking.booking_reference }}</h1>
+  <div class="card card-body">
+    <p><strong>Customer:</strong> {{ booking.customer.get_full_name|default:booking.customer.username }} ({{ booking.customer.email }})</p>
+    <p><strong>Vehicle:</strong> {{ booking.vehicle }}</p>
+    <p><strong>Dates:</strong> {{ booking.pickup_date }} – {{ booking.return_date }}</p>
+    <p><strong>Status:</strong> {{ booking.get_status_display }}</p>
+    <p><strong>Booking total:</strong> ₦{{ booking.total_amount }}</p>
+    <p><strong>Return charges:</strong> ₦{{ booking.extra_charges|floatformat:2 }}</p>
+    <p><strong>Total due / outstanding:</strong> ₦{{ booking.amount_due|floatformat:2 }} / ₦{{ booking.outstanding_balance|floatformat:2 }}</p>
+    {% if form.fields.status.choices %}<form method="post">{% csrf_token %}{{ form.as_p }}<button class="btn btn-primary">Update status</button></form>{% endif %}
+    <div class="mt-3 d-flex flex-wrap gap-2">
+      <a class="btn btn-outline-primary" href="{% url 'payments:create' %}?booking={{ booking.id }}">Record payment</a>
+      <a class="btn btn-outline-secondary" href="{% url 'bookings:detail' booking.booking_reference %}">Booking and payments</a>
+      {% if booking.status == 'ACTIVE' or booking.status == 'OVERDUE' %}<a class="btn btn-outline-dark" href="{% url 'bookings:return' booking.booking_reference %}">Process return</a>{% endif %}
+    </div>
+  </div>
+  {% include 'bookings/return_summary.html' %}
+</div>
+{% endblock %}

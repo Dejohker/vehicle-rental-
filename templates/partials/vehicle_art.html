@@ -1,0 +1,24 @@
+<div class="vehicle-art" data-brand="{{ vehicle.brand }}" data-category="{{ vehicle.category.name }}" role="img" aria-label="Illustrative car silhouette; photo not provided for {{ vehicle }}">
+  <span class="vehicle-art-brand">{{ vehicle.brand }}</span>
+  <svg viewBox="0 0 440 220" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="227" cy="184" rx="177" ry="12" fill="#000" opacity=".22"/>
+    {% if vehicle.category.name == 'SUV' or vehicle.category.name == 'Van' %}
+    <path d="m49 152 7-53 31-10 27-35h164l42 48 58 13 18 37-9 20H52Z" fill="currentColor"/>
+    <path d="m97 99 26-34h58v34Zm95-34h75l32 36-107-2Z" fill="#152438" stroke="#d7e2ef" stroke-width="2"/>
+    <path d="M188 111v52m-83-50-8 46m199-47 6 50" stroke="#182b42" stroke-width="2" opacity=".65"/>
+    {% elif vehicle.category.name == 'Exotic' %}
+    <path d="m36 153 18-24 67-11 68-38h70l48 41 66 12 35 25-7 15H42Z" fill="currentColor"/>
+    <path d="m139 117 56-29h26l-9 32Zm91-29h22l36 33-64-1Z" fill="#122137" stroke="#d7e2ef" stroke-width="2"/>
+    <path d="m119 148 76-17-20 27-58 4m241-17 30 4" stroke="#172a41" stroke-width="5"/>
+    {% else %}
+    <path d="m39 153 17-31 58-13 48-45h98l62 49 58 15 20 30-7 14H44Z" fill="currentColor"/>
+    <path d="m128 110 42-36h40v40Zm92-36h34l49 40h-83Z" fill="#122137" stroke="#d7e2ef" stroke-width="2"/>
+    <path d="m118 124-9 37m108-40v43m91-42 9 40" stroke="#172a41" stroke-width="2" opacity=".65"/>
+    {% endif %}
+    <path d="m369 132 19 6-2 9-23-7Z" fill="#f4fbff"/><path d="m47 135 15-2-2 12H43Z" fill="#ff6964"/>
+    <path d="M125 168h173" stroke="#101c2e" stroke-width="6"/>
+    <circle cx="93" cy="165" r="28" fill="#111b2c"/><circle cx="93" cy="165" r="18" fill="#52637b" stroke="#d3dfed" stroke-width="3"/><path d="M93 149v32m-16-16h32m-27-11 22 22m-22 0 22-22" stroke="#d3dfed" stroke-width="2"/>
+    <circle cx="330" cy="165" r="28" fill="#111b2c"/><circle cx="330" cy="165" r="18" fill="#52637b" stroke="#d3dfed" stroke-width="3"/><path d="M330 149v32m-16-16h32m-27-11 22 22m-22 0 22-22" stroke="#d3dfed" stroke-width="2"/>
+  </svg>
+  <span class="vehicle-art-note">Illustration · photo coming soon</span>
+</div>
