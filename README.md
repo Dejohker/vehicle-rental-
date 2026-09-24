@@ -136,6 +136,10 @@ Follow [DEMO_CHECKLIST.md](DEMO_CHECKLIST.md) for the presentation flow and [DEF
 
 ## Configuration and deployment limits
 
+### Deploy on Render
+
+The repository includes `render.yaml`, which creates the web service and PostgreSQL database, generates the Django secret, runs migrations, loads the demonstration fleet, and configures automatic deploys. In Render, create a **Blueprint**, select this repository, and apply it. No commands or environment variables need to be entered manually.
+
 The included setup is for local demonstrations, using SQLite and manual payment records. `.env.example` documents the environment variables; it is not loaded automatically. `DJANGO_DEBUG=False` requires a separate `DJANGO_SECRET_KEY` and enables HTTPS-only settings. Supply an explicit `DJANGO_ALLOWED_HOSTS` value for a deployment.
 
 A public launch still needs a deployment target, PostgreSQL and concurrency verification, a production application server, static/media hosting, backups, monitoring, and operational payment/refund policies. Keep `/media/licenses/` routed through the authenticated Django download view; never expose that directory through a public media server. Do not publish the local database, demo credentials, uploaded license documents or private customer data. The ignore file excludes these local/private artifacts.
