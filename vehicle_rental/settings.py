@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 from django.core.exceptions import ImproperlyConfigured
 
@@ -26,9 +27,18 @@ DEVELOPMENT_SECRET_KEY = 'django-insecure-development-only-change-in-production-
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY') or DEVELOPMENT_SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() == 'true'
+ON_RENDER = os.environ.get('RENDER', '').lower() == 'true'
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False' if ON_RENDER else 'True').lower() == 'true'
 
 ALLOWED_HOSTS = [host.strip() for host in os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',') if host.strip()]
+RENDER_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME', '').strip()
+if RENDER_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_HOSTNAME)
+CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in os.environ.get('DJANGO_CSRF_TRUSTED_ORIGINS', '').split(',') if origin.strip()]
+if RENDER_HOSTNAME:
+    CSRF_TRUSTED_ORIGINS.append(f'https://{RENDER_HOSTNAME}')
+if ON_RENDER:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
@@ -50,6 +60,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -88,6 +99,10 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+if os.environ.get('DATABASE_URL'):
+    DATABASES['default'] = dj_database_url.parse(os.environ['DATABASE_URL'], conn_max_age=600, conn_health_checks=True)
+elif ON_RENDER:
+    raise ImproperlyConfigured('Set DATABASE_URL to your PostgreSQL connection URL on Render. Local SQLite is not persistent there.')
 
 
 # Password validation
@@ -124,11 +139,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_URL = '/static/'
+# Only committed catalogue assets, never licence documents or profile uploads.
+STATICFILES_DIRS = [BASE_DIR / 'static', ('fleet', BASE_DIR / 'media' / 'vehicles')]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = Path(os.environ.get('DJANGO_MEDIA_ROOT', str(BASE_DIR / 'media')))
+STORAGES = {
+    'default': {'BACKEND': 'vehicle_rental.storage.CatalogueMediaStorage'},
+    'staticfiles': {'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage' if DEBUG else 'whitenoise.storage.CompressedManifestStaticFilesStorage'},
+}
 
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'dashboard:index'

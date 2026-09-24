@@ -15,6 +15,9 @@ from vehicles.models import Vehicle, VehicleCategory
 class Command(BaseCommand):
     help = 'Create repeatable sample categories, vehicles, customers, bookings and payments.'
 
+    def add_arguments(self, parser):
+        parser.add_argument('--fleet-only', action='store_true', help='Only seed cars; do not create demo users, bookings or payments.')
+
     @transaction.atomic
     def handle(self, *args, **options):
         category_names = ['Economy', 'Sedan', 'SUV', 'Luxury', 'Van']
@@ -42,6 +45,9 @@ class Command(BaseCommand):
                 vehicle.image = image_path
                 vehicle.save(update_fields=['image'])
             vehicles.append(vehicle)
+        if options['fleet_only']:
+            self.stdout.write(self.style.SUCCESS('Fleet seeded without demo accounts or transactions.'))
+            return
         customers = []
         for index in range(1, 6):
             user, created = User.objects.get_or_create(username=f'customer{index}', defaults={'first_name': f'Customer', 'last_name': str(index), 'email': f'customer{index}@example.com'})

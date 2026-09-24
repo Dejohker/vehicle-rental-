@@ -22,6 +22,8 @@ class Command(BaseCommand):
             relative = Path('vehicles/ai-showcase') / f'{car.registration_number.lower()}.png'
             path = Path(settings.MEDIA_ROOT) / relative
             if not path.is_file():
+                path = settings.BASE_DIR / 'media' / relative
+            if not path.is_file():
                 missing += 1
                 continue
             with Image.open(path) as asset:
