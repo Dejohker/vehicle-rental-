@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 python manage.py migrate --noinput
-if [ "${SEED_DEMO_FLEET:-false}" = "true" ]; then
+if [ "${SEED_DEMO_FLEET:-${RENDER:-false}}" = "true" ]; then
   python manage.py seed_data --fleet-only
   python manage.py seed_showcase
   python manage.py attach_showcase_images

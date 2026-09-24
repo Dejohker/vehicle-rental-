@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 import os
+import secrets
 import dj_database_url
 from pathlib import Path
 from django.core.exceptions import ImproperlyConfigured
@@ -29,6 +30,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY') or DEVELOPMENT_SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 ON_RENDER = os.environ.get('RENDER', '').lower() == 'true'
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False' if ON_RENDER else 'True').lower() == 'true'
+if ON_RENDER and SECRET_KEY == DEVELOPMENT_SECRET_KEY:
+    SECRET_KEY = secrets.token_urlsafe(50)
 
 ALLOWED_HOSTS = [host.strip() for host in os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',') if host.strip()]
 RENDER_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME', '').strip()
@@ -101,8 +104,6 @@ DATABASES = {
 }
 if os.environ.get('DATABASE_URL'):
     DATABASES['default'] = dj_database_url.parse(os.environ['DATABASE_URL'], conn_max_age=600, conn_health_checks=True)
-elif ON_RENDER:
-    raise ImproperlyConfigured('Set DATABASE_URL to your PostgreSQL connection URL on Render. Local SQLite is not persistent there.')
 
 
 # Password validation
